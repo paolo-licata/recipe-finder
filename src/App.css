@@ -1,17 +1,20 @@
 .App {
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
   text-align: center;
 }
 
+/* Search Bar styling */
 .search-bar {
   margin: 20px 0;
 }
 
 .search-bar input {
   padding: 10px;
-  width: 50%;
+  width: 40%;
+  font-size: 1.2rem;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ddd;
 }
 
@@ -24,6 +27,7 @@
   cursor: pointer;
 }
 
+/* Recipe List styling */
 .recipe-list {
   display: flex;
   flex-wrap: wrap;
@@ -54,6 +58,49 @@
   background-color: #4CAF50;
   color: white;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Recipe Details styling */
+.recipe-detail {
+  width: 50%;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 7px 5px 5px #bebebe;
+  justify-self: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.recipe-detail img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.recipe-detail ul {
+  list-style: none;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.recipe-detail li {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.recipe-instructions {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.recipe-detail button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
 }

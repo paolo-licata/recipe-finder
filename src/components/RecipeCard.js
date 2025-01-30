@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RecipeCard({ recipe }) {
     return (
@@ -6,7 +7,9 @@ function RecipeCard({ recipe }) {
             <img src={recipe.image} alt={recipe.title} />
             <h2>{recipe.title}</h2>
             <p>{recipe.usedIngredients.length} ingredients</p>
-            <button>View Recipe</button>
+            <Link to={`/recipe/${recipe.id}`}>
+                <button>View Recipe</button>
+            </Link>
         </div>
     )
 }
