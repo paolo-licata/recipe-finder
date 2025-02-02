@@ -32,6 +32,11 @@ h1 {
   color: white;
   border: none;
   cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #46a04b;
 }
 
 /* Recipe List styling */
@@ -68,6 +73,11 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+.view-btn:hover {
+  background-color: #46a04b;
 }
 
 /* Recipe Details styling */
@@ -111,6 +121,11 @@ h1 {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+.recipe-detail button:hover {
+  background-color: #46a04b;
 }
 
 /* Favorties button styling */
