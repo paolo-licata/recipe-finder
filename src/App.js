@@ -1,13 +1,31 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import RecipeList from "./components/RecipeList";
 import RecipeDetail from "./components/RecipeDetail";
+import Favorites from "./components/Favorites";
 
 function App() {
   const [ingredients, setIngredients] = useState("");
   const [recipes, setRecipes] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+
+//Load favorites dishes from local storage when the app starts
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    console.log("Loaded favorites from LocalStorage:", savedFavorites);
+    
+    if (savedFavorites.length > 0) {
+      setFavorites(savedFavorites);
+    }
+  }, []);
+
+  //Save favoites to Local Storage when saved array changes
+  useEffect(() => {
+    console.log("💾 Saving to LocalStorage:", favorites);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   const handleSearch = () => {
     if (ingredients.trim() === "") {
@@ -25,10 +43,24 @@ function App() {
     });
   }
 
+  const toggleFavorite = (recipe) => {
+    const isFavorite = favorites.some((fav) => fav.id === recipe.id);
+    
+    if (isFavorite) {
+      setFavorites(favorites.filter((fav) => fav.id !== recipe.id)); //Remove from favorite array
+    } else {
+      setFavorites([...favorites, recipe]); //Add to favorite array
+    }
+  }
+
   return (
     <Router>
       <div className="App">
-        <h1>Recipe Finder</h1>
+        <h1>What's for dinner?</h1>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/favorites">Favorites ({favorites.length})</Link>
+        </nav>
         <Routes>
           {/* Home Page - Search and recipe list*/}
           <Route path="/" element={
@@ -43,12 +75,13 @@ function App() {
                 />
                 <button onClick={handleSearch}>Search</button>
               </div>
-              <RecipeList recipes={recipes} />
+              <RecipeList recipes={recipes} toggleFavorite={toggleFavorite} favorites={favorites} />
             </>
           } />
 
           {/* Recipe Detail Page */}
-          <Route path="/recipe/:id" element={<RecipeDetail />} />
+          <Route path="/recipe/:id" element={<RecipeDetail toggleFavorite={toggleFavorite} favorites={favorites} />} />
+          <Route path="/favorites" element={<Favorites toggleFavorite={toggleFavorite} favorites={favorites} />} />
         </Routes>
       </div>
     </Router>

@@ -40,6 +40,9 @@ function RecipeDetail() {
             <Link to="/">
                 <button>Back to Search</button>
             </Link>
+            <Link to="/favorites">
+                <button>Back to Favorites</button>
+            </Link>
         </div>
     )
 }
