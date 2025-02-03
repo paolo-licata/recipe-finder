@@ -1,6 +1,6 @@
 {
   "name": "recipe-finder",
-  "homepage": "https://paolo-licata.github.io/recipe-finder",
+  "homepage": "https://paolo-licata.github.io/recipe-finder/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
