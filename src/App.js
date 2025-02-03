@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
+import Welcome from "./components/Welcome";
 import RecipeList from "./components/RecipeList";
 import RecipeDetail from "./components/RecipeDetail";
 import Favorites from "./components/Favorites";
+import Layout from "./components/Layout";
 
 function App() {
   const [ingredients, setIngredients] = useState("");
@@ -48,19 +50,15 @@ function App() {
     } else {
       setFavorites([...favorites, recipe]); //Add to favorite array
     }
-  }
+  };
 
   return (
     <Router>
-      <div className="App">
-        <h1>What's for dinner?</h1>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/favorites">Favorites ({favorites.length})</Link>
-        </nav>
+      <Layout>
         <Routes>
+          <Route path="/" element={<Welcome />} />
           {/* Home Page - Search and recipe list*/}
-          <Route path="/" element={
+          <Route path="/home" element={
             <>
               <div className="search-bar">
                 <input 
@@ -84,7 +82,7 @@ function App() {
           <Route path="/recipe/:id" element={<RecipeDetail toggleFavorite={toggleFavorite} favorites={favorites} />} />
           <Route path="/favorites" element={<Favorites toggleFavorite={toggleFavorite} favorites={favorites} />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   )
 }

@@ -1,0 +1,55 @@
+.welcome {
+    text-align: center;
+    justify-self: center;
+    margin-top: 50px;
+    max-width: 450px;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 7px 4px 4px #eaeaea;
+  }
+
+  @media (max-width: 590px) {
+    .welcome {
+      margin-top: 15px;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .welcome {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      max-width: 250px;
+    }
+  }
+  
+  .welcome h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+  }
+  
+  .welcome p {
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+  .welcome span {
+    color: #4CAF50;
+    text-decoration: underline;
+  }
+  
+  .welcome button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .welcome button:hover {
+    background-color: #46a04b;
+  }
+  

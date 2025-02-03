@@ -37,7 +37,7 @@ function RecipeDetail() {
             <div className="recipe-instructions">
             <p dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
             </div>
-            <Link to="/">
+            <Link to="/home">
                 <button>Back to Search</button>
             </Link>
             <Link to="/favorites">

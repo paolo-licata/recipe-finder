@@ -8,7 +8,7 @@
 h1 {
   color: #4CAF50;
   border-radius: 10px;
-  width: 40%;
+  width: 65%;
   justify-self: center;
 }
 
@@ -91,18 +91,6 @@ h1 {
   padding: 20px;
 }
 
-@media (max-width: 1200px) {
-  .recipe-detail {
-    width: 70%;
-  }
-}
-
-@media (max-width: 900px) {
-  .recipe-detail {
-    width: 80%;
-  }
-}
-
 .recipe-detail img {
   width: 50%;
   border-radius: 10px;
@@ -126,7 +114,7 @@ h1 {
 
 .recipe-detail button {
   padding: 8px 16px;
-  margin: 15px;
+  margin-right: 15px;
   border: none;
   background-color: #4CAF50;
   color: white;
@@ -177,4 +165,49 @@ nav a:hover {
 
 .favorites-page {
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .recipe-detail {
+    width: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .recipe-detail {
+    width: 80%;
+  }
+}
+
+@media (max-width: 590px) {
+  h1 {
+    width: 80%;
+    font-size: 2.1rem;
+  }
+
+  .search-bar input {
+    padding: 10px;
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  .recipe-detail button {
+    width: 150px;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    width: 90%;
+    font-size: 1.8rem;
+  }
+
+  .search-bar input {
+    padding: 10px;
+    width: 60%;
+    font-size: 1rem;
+  }
 }
