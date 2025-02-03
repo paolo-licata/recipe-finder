@@ -13,9 +13,7 @@ function App() {
 
 //Load favorites dishes from local storage when the app starts
   useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    console.log("Loaded favorites from LocalStorage:", savedFavorites);
-    
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];    
     if (savedFavorites.length > 0) {
       setFavorites(savedFavorites);
     }
@@ -23,7 +21,6 @@ function App() {
 
   //Save favoites to Local Storage when saved array changes
   useEffect(() => {
-    console.log("💾 Saving to LocalStorage:", favorites);
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
@@ -75,7 +72,11 @@ function App() {
                 />
                 <button onClick={handleSearch}>Search</button>
               </div>
-              <RecipeList recipes={recipes} toggleFavorite={toggleFavorite} favorites={favorites} />
+              <RecipeList 
+                recipes={recipes} 
+                toggleFavorite={toggleFavorite} 
+                favorites={favorites}
+              />
             </>
           } />
 
