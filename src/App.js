@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import Welcome from "./components/Welcome";
@@ -56,7 +56,8 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/" element={<Navigate to="/welcome" />} />
+          <Route path="/welcome" element={<Welcome />} />
           {/* Home Page - Search and recipe list*/}
           <Route path="/home" element={
             <>
