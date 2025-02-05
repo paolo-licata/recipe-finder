@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
 
     return (
         <div className="App">
-          {location.pathname !== "/" && (
+          {location.pathname !== "/welcome" && (
             <>
               <h1>What's for dinner?</h1>
               <nav>
