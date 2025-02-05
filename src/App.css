@@ -19,7 +19,7 @@ h1 {
 .search-bar input {
   padding: 10px;
   width: 40%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-right: 10px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -171,11 +171,19 @@ nav a:hover {
   .recipe-detail {
     width: 70%;
   }
+
+  .search-bar input::placeholder {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 900px) {
   .recipe-detail {
     width: 80%;
+  }
+
+  .search-bar input::placeholder {
+    font-size: 12px;
   }
 }
 
@@ -188,7 +196,7 @@ nav a:hover {
   .search-bar input {
     padding: 10px;
     width: 60%;
-    font-size: 1rem;
+    font-size: 10px;
   }
 
   .recipe-detail button {
