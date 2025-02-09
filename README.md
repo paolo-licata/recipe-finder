@@ -54,5 +54,11 @@ npm start  # or yarn start
 3. **Save favorites**: Click on the heart icon to add recipes to favorites.
 4. **Access favorites**: Navigate to the Favorites page to view saved recipes.
 
+## 📌 Note on API Limitations
+
+- Spoonacular API (Free Plan): The app uses Spoonacular’s free API to fetch recipe details. Please note that full recipe details (including ingredients and instructions) might not be available unless you upgrade to the premium plan. As a result, the app may only show basic summaries for some recipes.
+- API Key Required: You will need to generate your own Spoonacular API key and add it to your .env file for the app to work.
+
+
 ## 📬 Contact
 For questions or feedback, contact me at [paolo_licata@outlook.com](mailto:paolo_licata@outlook.com).
