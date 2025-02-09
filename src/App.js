@@ -33,7 +33,7 @@ function App() {
     }
   
     //Call the API to fetch the recipes based on the ingredient searched
-    axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&apiKey=39865b07c21b43888a32e81080e595a3`)
+    axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&apiKey=c40aa75282794c0c823e883ab3c93ffc`)
     .then((response) => {
       setRecipes(response.data);
     })
